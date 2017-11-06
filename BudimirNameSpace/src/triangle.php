@@ -1,7 +1,9 @@
 <?php
 
-require_once Flag.php;
-require_once FlagInterface.php;
+//require_once 'Flag.php';
+//require_once 'FlagInterface.php';
+
+namespace BudimirNameSpace;
 
 /**
  * Class triangle
@@ -20,8 +22,8 @@ class triangle extends Flag implements FlagInterface
      * @param int $length
      */
 
-    public function construct(string $country, int $height, int $length){
-        parent::construct($country);
+    public function __construct(string $country, int $height, int $length){
+        parent::__construct($country);
         $this->height=$height;
         $this->length=$length;
     }
@@ -32,6 +34,12 @@ class triangle extends Flag implements FlagInterface
 
     public function getSize(): int{
         return 0.5*$this->height*$this->length;
+    }
+
+    public function __toString()
+    {
+        return parent::__toString();
+        return "Height: ".$this->height." / Length: ".$this->length;
     }
 
 }

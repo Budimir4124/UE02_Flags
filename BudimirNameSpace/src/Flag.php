@@ -5,6 +5,8 @@
  * Class Flag is the base for all Flags
  */
 
+namespace BudimirNameSpace;
+
 abstract class Flag
 {
 
@@ -22,9 +24,13 @@ abstract class Flag
      * @param string $country
      */
 
-    public function construct(string $country)
+    public function __construct(string $country)
     {
         $this->country = $country;
+    }
+
+    public function __toString(){
+        return "Country: ".$this->country;
     }
 
 }
